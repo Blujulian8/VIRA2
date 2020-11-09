@@ -1,0 +1,45 @@
+.Borde2 {
+  border-radius: 1em;
+
+  overflow: hidden;
+}
+
+.BordeR {
+  border-bottom: 0.15rem solid #caa6c5;
+}
+
+.BordeV {
+  border-bottom: 0.15rem solid #9dd595;
+}
+
+.BordeTR {
+  border-top: 0.15rem solid #caa6c5;
+}
+
+.BordeTV {
+  border-top: 0.15rem solid #9dd595;
+}
+
+.card {
+  border: none !important;
+}
+
+.Tarjeta {
+  color: #393939 !important;
+  text-decoration: none !important;
+}
+
+.Tarjeta2 {
+  color: #f4f4fa !important;
+  text-decoration: none !important;
+}
+
+.HoverCard1:hover {
+  background-color: #fdc5f5 !important;
+  transition: 0.15s ease-in-out !important;
+}
+
+.HoverCard2:hover {
+  background-color: #aff0a5 !important;
+  transition: 0.15s ease-in-out !important;
+}

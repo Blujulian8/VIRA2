@@ -1,0 +1,56 @@
+.Boton {
+  border-radius: 2em !important;
+  border-style: solid !important;
+  transition: 0.1s ease-in-out;
+  border-width: 0.25rem !important;
+}
+
+.Boton1 {
+  background-color: #f8b59b !important;
+  border-color: #f8b59b !important;
+  color: #393939 !important;
+}
+.Boton1:hover {
+  color: #f4f4fa !important;
+  background-color: rgb(100, 100, 100, 0) !important;
+}
+
+.Boton2 {
+  background-color: #8093f1 !important;
+  border-color: #8093f1 !important;
+  color: #f4f4fa !important;
+}
+.Boton2:hover {
+  color: #393939 !important;
+  background-color: rgb(100, 100, 100, 0) !important;
+}
+
+.Boton3 {
+  background-color: #b388eb !important;
+  border-color: #b388eb !important;
+  color: #f4f4fa !important;
+}
+.Boton3:hover {
+  color: #393939 !important;
+  background-color: rgb(100, 100, 100, 0) !important;
+}
+
+.btn {
+  outline: none !important;
+}
+
+.Boton111 {
+  background-color: #f8b59b !important;
+  border-color: #f8b59b !important;
+  color: #393939 !important;
+}
+.Boton111:hover {
+  color: #393939 !important;
+  background-color: rgb(100, 100, 100, 0) !important;
+}
+
+.Boton3sin {
+  background-color: #b388eb !important;
+  border-color: #b388eb !important;
+  color: #f4f4fa !important;
+}

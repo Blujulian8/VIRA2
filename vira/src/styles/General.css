@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+html,
+body {
+  height: 100% !important;
+}
+
+/* footer {
+    position: absolute;
+    bottom:0;
+} */
+
+.Fond0 {
+  background-color: #f4f4fa;
+}
+
+.Content {
+  min-height: calc(100vh - 12.75rem);
+}
+
+.container {
+  min-width: 80%;
+}
+
+.text1 {
+  font-weight: 400;
+}
+
+.text2 {
+  font-weight: 500;
+}
+
+.text3 {
+  font-weight: 600 !important;
+}
+
+.negroo {
+  color: #393939;
+}

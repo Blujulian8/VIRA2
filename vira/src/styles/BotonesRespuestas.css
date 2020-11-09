@@ -1,0 +1,24 @@
+.BotonTrue1 {
+    background-color: #AFF0A5 !important;
+    color: #393939 !important;
+    border-color: #8093f1 !important;
+}
+
+.BotonFalse1 {
+    background-color: #FF70A6 !important;
+    color: #f4f4fa !important;
+    border-color: #8093f1 !important;
+}
+
+
+.BotonTrue2 {
+    background-color: #AFF0A5 !important;
+    color: #393939 !important;
+    border-color: #F8B59B !important;
+}
+
+.BotonFalse2 {
+    background-color: #FF70A6 !important;
+    color: #f4f4fa !important;
+    border-color: #F8B59B !important;
+}
