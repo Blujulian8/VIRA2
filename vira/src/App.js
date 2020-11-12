@@ -38,7 +38,7 @@ function App() {
 		<Router>
 			<div className="Fond0">
 				<Navbar />
-				{/* CAMBIAR TEXTO DE PESTAÑA ELEGIR */}
+
 				<div class="container Content">
 					<Switch>
 						<Route path="/" exact component={Inicio} />

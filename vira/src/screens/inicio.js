@@ -25,18 +25,18 @@ export default class inicio extends Component {
                             <div className="col-sm mt-md-5 mt-4">
                                 <div className=" mx-2 mx-md-5">
                                     <h4>Lista de Elementos</h4>
-                                    <h6 className="mb-4">Aquí podrás encontrar una gran variedad de palabras, imágenes y sonidos que te permitirán mejorar tu habilidades de comunicación</h6>
+                                    <h6 className="mb-4">Gran variedad de palabras, imágenes y sonidos que te permitirán mejorar tus habilidades de comunicación</h6>
                                     <h4>Reconoce el Elemento</h4>
-                                    <h6 className="mb-3 mb-md-5">Aquí podrás ejercitar tus habilidades de comunicación eligiendo la palabra que le corresponda a la imagen que se visualiza</h6>
+                                    <h6 className="mb-3 mb-md-5">Ejercita tus habilidades de comunicación eligiendo la palabra que le corresponda a la imagen que se visualiza</h6>
                                 </div>
                             </div>
                             {/* <span className="border-right border-left border pan"></span> HASTA QUE NO ARREGLE EL COLOR NO VA*/}
                             <div className="col-sm mt-4 mt-md-5">
                                 <div className="mx-2 mx-md-5">
                                     <h4>Reconoce la Frase</h4>
-                                    <h6 className="mb-4">Aquí podrás ejercitar tus habilidades de comunicación eligiendo la frase que se asocie a la imagen que se visualiza</h6>
+                                    <h6 className="mb-4">Ejercita tus habilidades de comunicación eligiendo la frase que se asocie a la imagen que se visualiza</h6>
                                     <h4>Repite la Oración</h4>
-                                    <h6 className="mb-4 mb-md-5">Aquí podrás ejercitar tus habilidades de comunicación repitiendo la frase dada sin ningún error</h6>
+                                    <h6 className="mb-4 mb-md-5">Ejercita tus habilidades de comunicación repitiendo la frase dada sin ningún error</h6>
                                 </div>
                             </div>
 

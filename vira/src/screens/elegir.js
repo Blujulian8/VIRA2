@@ -17,7 +17,7 @@ export default class Elegir extends Component {
                             <Link to="/ListaElementos" className="Tarjeta">
                                 <div className="card-header h4 Jumbo2 py-3 BordeR text3">Lista de Elementos</div>
                                 <div className="card-body">
-                                    <h5 className="card-text my-md-2">Aquí podrás encontrar una gran variedad de palabras, imágenes y sonidos que te permitirán mejorar tu habilidades de comunicación</h5>
+                                    <h5 className="card-text my-md-2">Gran variedad de palabras, imágenes y sonidos que te permitirán mejorar tus habilidades de comunicación</h5>
                                 </div>
                             </Link>
                         </div>
@@ -29,7 +29,7 @@ export default class Elegir extends Component {
                             <Link to="ReconoceElemento" className="Tarjeta">
                                 <div className="card-header h4 Jumbo2 py-3 BordeR text3">Reconoce el Elemento</div>
                                 <div className="card-body">
-                                    <h5 className="card-text my-md-2">Aquí podrás ejercitar tus habilidades de comunicación eligiendo la palabra que le corresponda a la imagen que se visualiza</h5>
+                                    <h5 className="card-text my-md-2">Ejercita tus habilidades de comunicación eligiendo la palabra que le corresponda a la imagen que se visualiza</h5>
                                 </div>
                             </Link>
                         </div>
@@ -40,7 +40,7 @@ export default class Elegir extends Component {
                             <Link to="ReconoceFrase" className="Tarjeta">
                                 <div className="card-header h4 Jumbo2 py-3 BordeR text3">Reconoce la frase</div>
                                 <div className="card-body">
-                                    <h5 className="card-text my-md-2 align-middle">Aquí podrás ejercitar tus habilidades de comunicación eligiendo la frase que se asocie a la imagen que se visualiza</h5>
+                                    <h5 className="card-text my-md-2 align-middle">Ejercita tus habilidades de comunicación eligiendo la frase que se asocie a la imagen que se visualiza</h5>
                                 </div>
                             </Link>
                         </div>
@@ -52,7 +52,7 @@ export default class Elegir extends Component {
                             <Link to="RepiteOracion" className="Tarjeta">
                                 <div className="card-header h4 Jumbo2 py-3 BordeR text3">Repite la Oración</div>
                                 <div className="card-body">
-                                    <h5 className="card-text my-md-2">Aquí podrás ejercitar tus habilidades de comunicación repitiendo la frase dada sin ningún error</h5>
+                                    <h5 className="card-text my-md-2">Ejercita tus habilidades de comunicación repitiendo la frase dada sin ningún error</h5>
                                 </div>
                             </Link>
                         </div>

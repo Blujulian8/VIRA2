@@ -8,23 +8,23 @@ import { db } from "../index";
 
 //TODO LO DE LISTA DE ELEMENTOOOOOS
 
-export default function Recon() {
+export default function Recon2() {
     const [bien, setBien] = React.useState(0)
     const [pregunta, setPregunta] = React.useState({ opciones: ["Opción A", "Opcion B", "Opcion C"], correcta: 0, imagen: "", });
     const [lista, setLista] = React.useState();
-    const [titulo, setTitulo] = React.useState("¿Que es esta imagen?");
+    const [titulo, setTitulo] = React.useState("¿Que oracion es correcta respecto a esta imagen?");
 
     const NuevaPregunta = (datitos) => {
         var largo = datitos.length;
         var azar = Math.floor(Math.random() * largo);
         setPregunta(datitos[azar]);
         setBien(0)
-        setTitulo("¿Que es esta imagen?")
+        setTitulo("¿Que oracion es correcta respecto a esta imagen?")
     }
 
 
     React.useEffect(() => {
-        db.collection("Vira2020/reconocer/Reconocer")
+        db.collection("Vira2020/frases/Frases")
             .get()
             .then((querySnapshot) => {
                 let datitos = [];
@@ -61,7 +61,7 @@ export default function Recon() {
     }
 
     function Respuesta(opcion) {
-        if (bien === 0) return ("Boton2");
+        if (bien === 0) return ("Boton111");
 
         else if (opcion === pregunta.correcta) return ("BotonTrue1");
 
@@ -80,55 +80,42 @@ export default function Recon() {
                 {titulo}
             </h2>
 
-            <div className="row">
-                <div className="col-lg-5 col-md-10 mx-auto">
 
-                    <div className="card Jumbo5 Borde Sombra">
-                        <div className="card-body">
-                            <img className="img-fluid Borde" src={pregunta.imagen} />
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="card Jumbo1 w-md-50 Borde Sombra">
+                        <div class="card-body">
+                            <img class="img-fluid Borde" src={pregunta.imagen} />
                         </div>
                     </div>
-
                 </div>
-            </div>
 
+                <div class="col-md-6">
+                    <div class="d-inline-flex flex-column ml-md-5">
+                        <a class={`btn Boton px-5 py-2 mt-3 mt-md-5 Sombra ${Respuesta(0)}`} role="button" onClick={() => Check(0)}>
+                            <h3 class="my-auto text2">{pregunta.opciones[0]}</h3>
+                        </a>
 
+                        <a class={`btn Boton px-5 py-2 mt-3 mt-md-5 Sombra ${Respuesta(1)}`} role="button" onClick={() => Check(1)}>
+                            <h3 class="my-auto text2">{pregunta.opciones[1]}</h3>
+                        </a>
 
-            <div className="row mt-lg-4">
-                <div className="col-lg-8 mx-auto">
-                    <div className="d-flex justify-content-center flex-wrap">
-                        <div className="col-sm-4 text-center">
-                            <a className={`btn Boton px-5 py-2 mt-3 Sombra ${Respuesta(0)}`} role="button" onClick={() => Check(0)}>
-                                <h3 className="my-auto text2">{pregunta.opciones[0]}</h3>
-                            </a>
-                        </div>
-
-                        <div className="col-sm-4 text-center">
-                            <a className={`btn Boton px-5 py-2 mt-3 Sombra ${Respuesta(1)}`} role="button" onClick={() => Check(1)}>
-                                <h3 className="my-auto text2">{pregunta.opciones[1]}</h3>
-                            </a>
-                        </div>
-
-                        <div className="col-sm-4 text-center">
-                            <a className={`btn Boton px-5 py-2 mt-3 Sombra ${Respuesta(2)}`} role="button" onClick={() => Check(2)}>
-                                <h3 className="my-auto text2">{pregunta.opciones[2]}</h3>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-
-            {bien > 0 &&
-                <div>
-                    <div className="text-center">
-                        <a className="btn Boton2 Boton px-5 py-2 mt-5 Sombra" onClick={() => NuevaPregunta(lista)} role="button">
-                            <h3 className="my-auto text2">Siguiente Pregunta</h3>
+                        <a class={`btn Boton px-5 py-2 mt-3 mt-md-5 Sombra ${Respuesta(2)}`} role="button" onClick={() => Check(2)}>
+                            <h3 class="my-auto text2">{pregunta.opciones[2]}</h3>
                         </a>
                     </div>
                 </div>
-            }
+
+                {bien > 0 &&
+                    <div className="mx-auto">
+                        <a className="btn Boton111 Boton px-5 py-2 mt-5 Sombra" role="button" onClick={() => NuevaPregunta(lista)}>
+                            <h3 className="my-auto text2">Siguiente Pregunta</h3>
+                        </a>
+                    </div>
+                }
+
+            </div>
 
         </div>
     )

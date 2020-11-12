@@ -3,12 +3,11 @@ import { db } from "../index";
 
 
 
-function Prueba(props) {
+function Prueba() {
 
     const [datos, setDatos] = React.useState([]);
 
     React.useEffect(() => {
-        console.log(props);
         db.collection("Vira2020/categorias/categorias")
             .get()
             .then((querySnapshot) => {
@@ -36,5 +35,5 @@ function Prueba(props) {
 }
 
 export default Prueba;
-
+//HACER QUE EK EXPORT SEA DE DATOS???
 
