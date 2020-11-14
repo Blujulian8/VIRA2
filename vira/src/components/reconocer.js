@@ -3,7 +3,6 @@ import { db } from "../index";
 
 //QUE SE MANDEN LAS FOTOS (actualizar firebase)
 //INHABILITAR BOTONES??
-//APLICARLO PARA EL DE FRASES UWU
 //APLUCARLO Y MODIFICAR PAAR EL DE REPETIR ORACION 
 
 //TODO LO DE LISTA DE ELEMENTOOOOOS
@@ -84,8 +83,8 @@ export default function Recon() {
                 <div className="col-lg-5 col-md-10 mx-auto">
 
                     <div className="card Jumbo5 Borde Sombra">
-                        <div className="card-body">
-                            <img className="img-fluid Borde" src={pregunta.imagen} />
+                        <div className="card-body text-center">
+                            <img className="imagenRec Borde" src={pregunta.imagen} />
                         </div>
                     </div>
 
@@ -95,7 +94,7 @@ export default function Recon() {
 
 
             <div className="row mt-lg-4">
-                <div className="col-lg-8 mx-auto">
+                <div className="col-lg-8 mx-auto" >
                     <div className="d-flex justify-content-center flex-wrap">
                         <div className="col-sm-4 text-center">
                             <a className={`btn Boton px-5 py-2 mt-3 Sombra ${Respuesta(0)}`} role="button" onClick={() => Check(0)}>

@@ -10,6 +10,7 @@ import "./styles/Botones.css";
 import "./styles/BotonesRespuestas.css";
 import "./styles/Tarjetas.css";
 import "./styles/Icons.css";
+import "./styles/Fotos.css";
 
 import 'bootstrap/dist/css/bootstrap.css';
 import $ from 'jquery';
@@ -30,7 +31,9 @@ import ReconoceFrase from './screens/reconocefrase';
 import RepetirOracion from './screens/repetiroracion';
 
 import Pruebaa from './components/prueba';
-import Prueba from './components/codigoviau'
+import Prueba from './components/codigoviau';
+
+import Categoria from './components/categoria';
 
 function App() {
 
@@ -50,6 +53,8 @@ function App() {
 						<Route path="/ReconoceElemento" component={ReconoceElemento} />
 						<Route path="/ReconoceFrase" component={ReconoceFrase} />
 						<Route exact path="/RepiteOracion" component={RepetirOracion} />
+
+						<Route exact path="/categoria" component={Categoria} />
 
 						<Route exact path="/Prueba" component={Pruebaa} />
 					</Switch>

@@ -27,15 +27,29 @@ function TextToSpeech(props) {
     speak({ text: value, voice: actual });
   }
 
-  return (
+  if (props.type === "icono") {
+    return (
 
-    <div>
+      <div>
 
-      <a className="btn Boton Boton3sin" onClick={() => read()} role="button" >
-        <img src={VOLUME} className="IconoSM my-auto" alt="Escuchar" />
-      </a>
-    </div>
-  );
+        <a className="btn Boton Boton3sin" onClick={() => read()} role="button" >
+          <img src={VOLUME} className="IconoSM my-auto" alt="Escuchar" />
+        </a>
+      </div>
+    );
+  }
+
+  else {
+    return (
+      <div>
+        <a className="Tarjeta2" role="button" onClick={() => read()}>
+          <h4 className="my-auto text2">Reproducir sonido</h4>
+        </a>
+      </div>
+    )
+  }
+
+
 }
 
 export default TextToSpeech;

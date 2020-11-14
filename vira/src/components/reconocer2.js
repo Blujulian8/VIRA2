@@ -3,7 +3,6 @@ import { db } from "../index";
 
 //QUE SE MANDEN LAS FOTOS (actualizar firebase)
 //INHABILITAR BOTONES??
-//APLICARLO PARA EL DE FRASES
 //APLUCARLO Y MODIFICAR PAAR EL DE REPETIR ORACION 
 
 //TODO LO DE LISTA DE ELEMENTOOOOOS
@@ -86,7 +85,7 @@ export default function Recon2() {
                 <div class="col-md-6">
                     <div class="card Jumbo1 w-md-50 Borde Sombra">
                         <div class="card-body">
-                            <img class="img-fluid Borde" src={pregunta.imagen} />
+                            <img class="imagenRec2 Borde align-center" src={pregunta.imagen} />
                         </div>
                     </div>
                 </div>

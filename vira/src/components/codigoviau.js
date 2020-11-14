@@ -8,6 +8,7 @@ function Prueba() {
     const [datos, setDatos] = React.useState([]);
 
     React.useEffect(() => {
+        console.log("holaaaaaaaaaaaaaaaaaaaaaa");
         db.collection("Vira2020/categorias/categorias")
             .get()
             .then((querySnapshot) => {
@@ -17,23 +18,28 @@ function Prueba() {
                     datitos.push(data);
                     // console.log(`${doc.id} => ${doc.data()}`);
                 });
+                console.log("GG", datitos)
                 return datitos;
             })
             .then((datitos) => setDatos(datitos))
             .catch((err) => console.log(err));
     }, []);
 
-    console.log(datos);
+    console.log("HOlaa", datos);
     return (
-        <>
-            {datos.map((dato, index) => {
-                return <h6 key={index}>{dato.name}</h6>;
-            })}{" "}
-        </>
+        <div>
+            {datos.map((elemento, i) => {
+                console.log(elemento)
+                return (
+                    <p key={i}> "elemento" </p>
+                )
+            })}
+        </div>
     );
 
 }
 
 export default Prueba;
-//HACER QUE EK EXPORT SEA DE DATOS???
+
+
 

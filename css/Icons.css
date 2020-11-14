@@ -1,9 +1,11 @@
 .IconoSM {
   width: 3rem;
   height: auto;
+  outline: none;
 }
 
 .IconoLG {
   width: 5rem;
   height: auto;
+  outline: none;
 }

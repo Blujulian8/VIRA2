@@ -20,8 +20,6 @@ body {
   background-color: #f4f4fa;
 }
 
-.Fond0 {
-}
 
 .Content {
   min-height: calc(100vh - 12.75rem);
@@ -31,11 +29,4 @@ body {
   min-width: 80%;
 }
 
-/* SE HACE ESTO DE TEXTO RESPONSIVE?? BUSCAR MAS */
-/* h1 {font-size: 4.5vh;}
-h2 {font-size: 3.5vh;}
-h3 {font-size: 3.2vh;}
-h4 {font-size: 2.9vh;}
-h5 {font-size: 2.3vh;}
-h6 {font-size: 1.8vh;}
-p {font-size: 2vmin;} */
+
