@@ -13,18 +13,20 @@ function TextToSpeech(props) {
 
   function read() {
 
-    let actual = voice;
+    //   let actual = voice;
 
-    if (actual == null) {
-      voices.forEach((element) => {
-        if (element.lang.indexOf("es") != -1) {
-          actual = element;
-          setVoice(element);
-        }
-      })
-    }
-    console.log(voice)
-    speak({ text: value, voice: actual });
+    //   if (actual == null) {
+    //     voices.forEach((element) => {
+    //       if (element.lang.indexOf("es") != -1) {
+    //         actual = element;
+    //         setVoice(element);
+    //       }
+    //     })
+    //   }
+    //   speak({ text: "culoo", voice: actual });
+    var msg = new SpeechSynthesisUtterance();
+    msg.text = "Hello World";
+    window.speechSynthesis.speak(msg)
   }
 
   if (props.type === "icono") {

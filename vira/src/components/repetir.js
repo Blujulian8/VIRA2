@@ -14,17 +14,20 @@ export default function Repetir() {
 
     const [lista, setLista] = React.useState();
     const [pregunta, setPregunta] = React.useState({ opciones: [], correcta: 0, });
-    const [oracion, setOracion] = React.useState("me cai de la ìleta");
+    const [oracion, setOracion] = React.useState();
     const [bien, setBien] = React.useState(0)
 
     const NuevaPregunta = (lista) => {
         var largo = lista.length;
         var azar = Math.floor(Math.random() * largo);
-
+        // console.log("quedigo", lista[azar])
         var posicion = pregunta.correcta;
         setPregunta(lista[azar]);
-        setOracion(pregunta.opciones[posicion])
+        // setOracion(pregunta.opciones[posicion])
+        setOracion(lista[azar].opciones[lista[azar].correcta])
         setBien(0)
+
+        console.log("pingo", oracion)
     }
 
 
@@ -37,8 +40,13 @@ export default function Repetir() {
                     const data = doc.data();
                     datitos.push(data);
                 });
-                NuevaPregunta(datitos);
+
                 setLista(datitos);
+                var largo = datitos.length;
+                var azar = Math.floor(Math.random() * largo);
+                setOracion(datitos[azar].opciones[datitos[azar].correcta])
+                setPregunta(datitos[azar])
+
             })
 
     }, []);
@@ -64,7 +72,7 @@ export default function Repetir() {
 
     //     else return ("BotonFalse1")
     // }
-    console.log(oracion)
+
 
     return (
         <div>
