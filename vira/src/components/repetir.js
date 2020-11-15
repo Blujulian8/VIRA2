@@ -4,7 +4,7 @@ import { db } from "../index";
 import VOLUME from "../icons/volume_up.svg";
 import ARROW from "../icons/arrow_right.svg";
 
-import Listener from '../components/SpeechRecogniser';
+import Listener, { SpeechRecogniser, Coincide } from '../components/SpeechRecogniser';
 import Reader from '../components/TextToSpeech';
 
 
@@ -14,20 +14,17 @@ export default function Repetir() {
 
     const [lista, setLista] = React.useState();
     const [pregunta, setPregunta] = React.useState({ opciones: [], correcta: 0, });
-    const [oracion, setOracion] = React.useState();
+    const [oracion, setOracion] = React.useState("Abri la heladera en patas y me dio corriente");
     const [bien, setBien] = React.useState(0)
 
     const NuevaPregunta = (lista) => {
         var largo = lista.length;
         var azar = Math.floor(Math.random() * largo);
-        // console.log("quedigo", lista[azar])
-        var posicion = pregunta.correcta;
+        // var posicion = pregunta.correcta;
         setPregunta(lista[azar]);
         // setOracion(pregunta.opciones[posicion])
         setOracion(lista[azar].opciones[lista[azar].correcta])
         setBien(0)
-
-        console.log("pingo", oracion)
     }
 
 
@@ -89,7 +86,7 @@ export default function Repetir() {
                 </div>
 
                 <div className="p-0 ml-md-auto mr-md-4" >
-                    <Reader text="Abri la heladera en patas y me dio corriente" type="icono" />
+                    <Reader text={oracion} type="icono" />
                 </div>
 
             </div>

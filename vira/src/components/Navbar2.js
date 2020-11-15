@@ -9,8 +9,8 @@ export default class Navbar2 extends Component {
                 {/* <Link className="navbar-brand ml-lg-5" to="/">
                     <img src={LOGO} alt="Menu Vira" height="50" class="align-top" />
                 </Link> */}
-                <span className="navbar-text text1 mx-auto blancoo">
-                    VIRA 2020 - En realidad no tenemos derechos registrados xd
+                <span className="navbar-text text2 mx-auto blancoo">
+                    VIRA 2020 - Todos los derechos registrados o algo asi
                 </span>
             </nav>
         )

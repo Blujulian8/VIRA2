@@ -13,20 +13,32 @@ function TextToSpeech(props) {
 
   function read() {
 
-    //   let actual = voice;
+    let actual = voice;
 
-    //   if (actual == null) {
-    //     voices.forEach((element) => {
-    //       if (element.lang.indexOf("es") != -1) {
-    //         actual = element;
-    //         setVoice(element);
-    //       }
-    //     })
-    //   }
-    //   speak({ text: "culoo", voice: actual });
-    var msg = new SpeechSynthesisUtterance();
-    msg.text = "Hello World";
-    window.speechSynthesis.speak(msg)
+    if (actual == null) {
+      voices.forEach((element) => {
+        if (element.lang.indexOf("es") != -1) {
+          actual = element;
+          setVoice(element);
+        }
+      })
+    }
+
+    var esLaQueVa = actual ? actual : voices[0]
+    console.log(esLaQueVa)
+    speak({ text: value, voice: esLaQueVa });
+
+    // var msg = new SpeechSynthesisUtterance();
+    // var voices = window.speechSynthesis.getVoices();
+    // console.log(voices)
+    // msg.voice = voices[0];
+    // msg.volume = 1; // From 0 to 1
+    // msg.rate = 1; // From 0.1 to 10
+    // msg.pitch = 2; // From 0 to 2
+    // msg.text = value;
+    // msg.lang = 'es';
+    // speechSynthesis.speak(msg);
+
   }
 
   if (props.type === "icono") {

@@ -7,14 +7,19 @@ import VOICE from "../icons/keyboard_voice.svg";
 import STOP from "../icons/stop_rounded.svg";
 
 
+const Coincide = (coincide) => {
+  return (
+    coincide
+  )
+}
+
 
 const SpeechRecogniser = (props) => {
-  const [palabra, setPalabra] = useState(props.palabra);
   const [coincide, setCoincide] = useState();
 
-  // var oracion = props.palabra
-  // oracion = oracion.toLowerCase()
-  // console.log(oracion)
+  var oracion = props.palabra.toLowerCase()
+
+  console.log("a", oracion)
 
   const { transcript, resetTranscript } = useSpeechRecognition();
 
@@ -24,13 +29,16 @@ const SpeechRecogniser = (props) => {
 
   const parar = () => {
     SpeechRecognition.abortListening();
-    if (transcript.toLowerCase().indexOf(palabra) !== -1) {
+    console.log("b", transcript.toLowerCase())
+    if (transcript.toLowerCase().indexOf(oracion) !== -1) {
       console.log("GIGANTE!");
-      setCoincide(true)
+      setCoincide(1)
+      Coincide(coincide)
     }
     else {
       console.log("F man");
-      setCoincide(false);
+      setCoincide(2);
+      Coincide(coincide)
     }
     resetTranscript();
   };
@@ -58,3 +66,5 @@ const SpeechRecogniser = (props) => {
 };
 
 export default SpeechRecogniser;
+
+export { Coincide };
