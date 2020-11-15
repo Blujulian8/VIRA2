@@ -5,11 +5,16 @@ import SpeechRecognition, {
 //import Readalong from "react-readalong-component";
 import VOICE from "../icons/keyboard_voice.svg";
 import STOP from "../icons/stop_rounded.svg";
-import ARROW from "../icons/arrow_right.svg";
+
 
 
 const SpeechRecogniser = (props) => {
   const [palabra, setPalabra] = useState(props.palabra);
+  const [coincide, setCoincide] = useState();
+
+  // var oracion = props.palabra
+  // oracion = oracion.toLowerCase()
+  // console.log(oracion)
 
   const { transcript, resetTranscript } = useSpeechRecognition();
 
@@ -20,14 +25,19 @@ const SpeechRecogniser = (props) => {
   const parar = () => {
     SpeechRecognition.abortListening();
     if (transcript.toLowerCase().indexOf(palabra) !== -1) {
-      alert("GIGANTE!");
+      console.log("GIGANTE!");
+      setCoincide(true)
+    }
+    else {
+      console.log("F man");
+      setCoincide(false);
     }
     resetTranscript();
   };
 
   return (
-    <div className="row">
-      {/* <p>{transcript}</p> */}
+    <>
+      <p>{transcript}</p>
 
       <div className="col-md-4 px-5">
         <a className="btn Boton Boton3sin btn-block Sombra py-2 my-3" role="button" onClick={empezar}>
@@ -43,14 +53,7 @@ const SpeechRecogniser = (props) => {
         </a>
       </div>
 
-      <div className="col-md-4 px-5">
-        <a className="btn Boton Boton3sin btn-block Sombra py-2 my-3" href="" role="button">
-          <img src={ARROW} className="IconoLG my-auto" alt="Siguiente oración" />
-          <h3 className="my-auto">Siguiente Oración</h3>
-        </a>
-      </div>
-
-    </div>
+    </>
   );
 };
 

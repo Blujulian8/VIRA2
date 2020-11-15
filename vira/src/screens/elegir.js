@@ -14,7 +14,7 @@ export default class Elegir extends Component {
 
                     <div className="col mb-4 mb-md-5 ">
                         <div className="card Jumbo4 mx-md-4 Borde2 h-100 HoverCard1 Sombra negroo">
-                            <Link to="/ListaElementos" className="Tarjeta">
+                            <Link to="/Lista" className="Tarjeta">
                                 <div className="card-header h4 Jumbo2 py-3 BordeR text3">Lista de Elementos</div>
                                 <div className="card-body">
                                     <h5 className="card-text my-md-2">Gran variedad de palabras, imágenes y sonidos que te permitirán mejorar tus habilidades de comunicación</h5>

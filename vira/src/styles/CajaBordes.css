@@ -19,16 +19,16 @@
   background-color: #f4f4fa !important;
 }
 
-.CajaB3 {
-  color: #393939 !important;
-  border-radius: 2em !important;
-  border: 0.6rem solid #aff0a5 !important;
-  background-color: #f4f4fa !important;
-}
-
 .CajaB4 {
   color: #393939 !important;
   border-radius: 2em !important;
   border: 0.6rem solid #fdd2f7 !important;
+  background-color: #f4f4fa !important;
+}
+
+.CajaB5 {
+  color: #393939 !important;
+  border-radius: 2em !important;
+  border: 0.6rem solid #FF70A6 !important;
   background-color: #f4f4fa !important;
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { db } from "../index";
 
 import VOLUME from "../icons/volume_up.svg";
+import ARROW from "../icons/arrow_right.svg";
 
 import Listener from '../components/SpeechRecogniser';
 import Reader from '../components/TextToSpeech';
@@ -9,65 +10,61 @@ import Reader from '../components/TextToSpeech';
 
 
 export default function Repetir() {
-    const [bien, setBien] = React.useState(0)
-    const [pregunta, setPregunta] = React.useState({ opciones: [], correcta: 0, imagen: "", });
-    const [lista, setLista] = React.useState();
-    // const [titulo, setTitulo] = React.useState("¿Que es esta imagen?");
+    // "Abri la heladera en patas y me dio corriente"
 
-    const NuevaPregunta = (datitos) => {
-        var largo = datitos.length;
+    const [lista, setLista] = React.useState();
+    const [pregunta, setPregunta] = React.useState({ opciones: [], correcta: 0, });
+    const [oracion, setOracion] = React.useState("me cai de la ìleta");
+    const [bien, setBien] = React.useState(0)
+
+    const NuevaPregunta = (lista) => {
+        var largo = lista.length;
         var azar = Math.floor(Math.random() * largo);
-        setPregunta(datitos[azar]);
+
+        var posicion = pregunta.correcta;
+        setPregunta(lista[azar]);
+        setOracion(pregunta.opciones[posicion])
         setBien(0)
-        // setTitulo("¿Que es esta imagen?")
     }
 
 
     React.useEffect(() => {
-        db.collection("Vira2020/reconocer/Reconocer")
+        db.collection("Vira2020/frases/Frases")
             .get()
             .then((querySnapshot) => {
                 let datitos = [];
                 querySnapshot.forEach((doc) => {
                     const data = doc.data();
                     datitos.push(data);
-                    // console.log(`${doc.id} => ${doc.data()}`);
                 });
-                return datitos;
-            })
-            .then((datitos) => {
                 NuevaPregunta(datitos);
                 setLista(datitos);
             })
-            .catch((err) => console.log(err));
-
 
     }, []);
 
-    console.log(pregunta)
-
-    function Check(opcion) {
-        if (pregunta.correcta === opcion) {
-            setBien(1);
-            console.log("Funciona, Epico!!");
-            // setTitulo("¡Correcto!");
-        }
-        else {
-            setBien(2);
-            // setTitulo("Incorrecto");
-        }
+    // function Check(opcion) {
+    //     if (pregunta.correcta === opcion) {
+    //         setBien(1);
+    //         console.log("Funciona, Epico!!");
+    //         // setTitulo("¡Correcto!");
+    //     }
+    //     else {
+    //         setBien(2);
+    //         // setTitulo("Incorrecto");
+    //     }
 
 
-    }
+    // }
 
-    function Respuesta(opcion) {
-        if (bien === 0) return ("Boton2");
+    // function Respuesta(opcion) {
+    //     if (bien === 0) return ("Boton2");
 
-        else if (opcion === pregunta.correcta) return ("BotonTrue1");
+    //     else if (opcion === pregunta.correcta) return ("BotonTrue1");
 
-        else return ("BotonFalse1")
-    }
-
+    //     else return ("BotonFalse1")
+    // }
+    console.log(oracion)
 
     return (
         <div>
@@ -80,17 +77,26 @@ export default function Repetir() {
             <div className="d-flex flex-wrap my-md-5 Borde Jumbo2 Sombra" >
 
                 <div className="h2 my-auto ml-md-4 p-3 p-md-0 text3">
-                    "Abri la heladera en patas y me dio corriente"
+                    {oracion}
                 </div>
 
-                <div className="p-2 m-3 ml-md-auto mr-md-4" >
-                    <Reader text={"Abri la heladera en patas y me dio corriente"} type="icono" />
+                <div className="p-0 ml-md-auto mr-md-4" >
+                    <Reader text="Abri la heladera en patas y me dio corriente" type="icono" />
                 </div>
 
             </div>
 
-            <div>
-                <Listener palabra={"owo"} />
+            <div className="row">
+
+                <Listener palabra={oracion} />
+
+                <div className="col-md-4 px-5">
+                    <a className="btn Boton Boton3sin btn-block Sombra py-2 my-3" onClick={() => NuevaPregunta(lista)} role="button">
+                        <img src={ARROW} className="IconoLG my-auto" alt="Siguiente oración" />
+                        <h3 className="my-auto">Siguiente Oración</h3>
+                    </a>
+                </div>
+
             </div>
 
 

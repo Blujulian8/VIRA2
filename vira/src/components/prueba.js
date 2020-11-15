@@ -2,9 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { db } from "../index";
 
-// import Prueba from '../components/codigoviau'
 
-function Pruebaa() {
+export default function Lista() {
 
     const [datos, setDatos] = React.useState([]);
 
@@ -37,39 +36,24 @@ function Pruebaa() {
         // console.log(Prueba)
     }, []);
 
-    // const SacarDB = (props) => {
-    //     React.useEffect(() => {
-    //         db.doc("Vira2020/categorias/categorias/" + props)
-    //             .get()
-    //             .then((querySnapshot) => {
-    //                 let datitos = [];
-    //                 querySnapshot.forEach((doc) => {
-    //                     const data = doc.data();
-    //                     datitos.push(data);
-    //                     // console.log(`${doc.id} => ${doc.data()}`);
-    //                 });
-    //                 return datitos;
-    //             })
-    //             .then((datitos) => {
-    //                 setLista(datitos);
-    //             })
-    //             .catch((err) => console.log(err));
-
-
-    //     }, []);
-    // }
-
 
     const header = () => {
         if (datos !== []) {
 
             return (
-                <div>
+                <div className="row row-cols-1 row-cols-md-2 text-center mt-3 mt-md-4">
                     {datos.map((elemento, i) => {
-                        // console.log(elemento)
                         return (
-                            // <a className="btn" key={i}> {elemento.name} </a>
-                            <Link key={i} to={{ pathname: "/categoria", state: { nombre: elemento.name } }} >{elemento.name}</Link>
+                            <div className="col mb-4">
+                                <div className="card Jumbo5 mx-md-3 Borde2 h-100 HoverCard2 Sombra negroo">
+                                    <Link key={i} to={{ pathname: "/Categoria", state: { nombre: elemento.name } }} className="Tarjeta">
+                                        <div className="card-header h4 Jumbo3 py-3 BordeV text3">{elemento.name}</div>
+                                        <div className="card-body">
+                                            <img className="imagen imagenCat Borde" src={elemento.imagen} />
+                                        </div>
+                                    </Link>
+                                </div>
+                            </div>
                         )
                     })
                     }
@@ -81,34 +65,10 @@ function Pruebaa() {
         }
     }
 
-    // const Newarray = datos.map()
-
-    // const ForE = (datu) => {
-    //     datu.forEach((datu) => SacarDB(datu))
-    // }
-
-
-
 
     return (
         <div>
             {header()}
         </div>
-        // < div >
-        //     { Prueba("Vira2020/categorias/categorias") }
-        // </div >
-        //     Prueba("Vira2020/categorias/categorias/categorias1[estado]");
-        // }
-        //     Prueba("Vira2020/categorias/categorias/categorias1[estado]");
-        // }
-        // if (estado === 2) {
-        //     Prueba("¨Vira2020/categorias/categorias1[estado]/Partes de Nuestro Cuerpo/Partes de Nuestro Cuerpo");
-        // }
-        // if (estado === 3) {
-        //     Prueba("¨Vira2020/categorias/categorias1[estado]/Prendas/Prendas");
-        // }
     );
 }
-export default Pruebaa
-
-

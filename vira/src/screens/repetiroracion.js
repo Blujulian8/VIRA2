@@ -9,8 +9,6 @@ export default class RepetirOracion extends Component {
         return (
             <div>
                 <Repetir />
-
-
             </div>
         )
     }

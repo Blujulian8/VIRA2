@@ -59,6 +59,13 @@ export default function Recon() {
 
     }
 
+
+    // function ClaseTitulo(opcion) {
+    //     if (titulo === "¡Correcto!") return ("CajaB3")
+    //     if (titulo === "Incorrecto") return ("CajaB5")
+    // }
+
+
     function Respuesta(opcion) {
         if (bien === 0) return ("Boton2");
 
@@ -70,17 +77,13 @@ export default function Recon() {
 
     return (
         <div>
-            {/* {bien === 1 &&
-                <h1>BIEN</h1>
-            }
-            {bien === 2 && <h1>MAL</h1>} */}
 
             <h2 className="my-3 mt-md-4 mb-md-4 text-center text2">
                 {titulo}
             </h2>
 
             <div className="row">
-                <div className="col-lg-5 col-md-10 mx-auto">
+                <div className="col-lg-7 col-md-10 mx-auto">
 
                     <div className="card Jumbo5 Borde Sombra">
                         <div className="card-body text-center">

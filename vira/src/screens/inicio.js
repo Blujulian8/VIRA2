@@ -5,7 +5,7 @@ export default class inicio extends Component {
     render() {
         return (
             <div>
-                <div className="jumbotron jumbotron-fluid CajaB1 Borde mt-3 mt-md-5 Sombra">
+                <div className="jumbotron jumbotron-fluid CajaB1 Borde mt-3 mt-md-4 Sombra">
                     <div className="mx-3 mx-md-5 aaaa">
                         <h2 className="mb-3 text3">VIRA es un sistema de rehabilitación dirigida a personas que padecen de afasia.</h2>
                         <h5 className="text2">Esta posee una interfaz accesible y amistosa para los usuarios que busca ayudar a las personas que padecen de afasia a realizar actividades terapéuticas persiguiendo objetivos lingüísticos mediante una serie de ejercicios interrelacionados y crecientes en complejidad.

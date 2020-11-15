@@ -20,6 +20,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { db } from "./index";
 import Navbar from './components/Navbar';
 import Navbar2 from './components/Navbar2';
+import Atras from './components/atras'
 
 import Inicio from './screens/inicio';
 import Elegir from './screens/elegir';
@@ -30,19 +31,32 @@ import ReconoceElemento from './screens/reconoceelemento';
 import ReconoceFrase from './screens/reconocefrase';
 import RepetirOracion from './screens/repetiroracion';
 
-import Pruebaa from './components/prueba';
-import Prueba from './components/codigoviau';
-
+import Lista from './components/prueba';
 import Categoria from './components/categoria';
+import Subcategoria from './components/subcategoria.js'
+
+import ATRAS from './icons/back.svg'
 
 function App() {
+
+	//REPETIR (.THEN , .TOLOWERCASE, EXPORTAR RESULTADO) - RETROCEDER - FOOTER CAMBIAR CONTENIDO
+	//SE BORRARIN LAS FOTOS DE LAS CATEGORIAS DE BEBIDAS
+	function goBack() {
+		window.history.go(-1);
+	}
 
 	return (
 		<Router>
 			<div className="Fond0">
 				<Navbar />
 
-				<div class="container Content">
+				{/* <div className="mt-3" >
+					<a className="p-3 mx-5 btn Boton Boton3sin Jumbo6 Borde" role="button" onClick={goBack()}>
+						<img src={ATRAS} className="IconoXS my-auto" alt="Escuchar" />
+					</a>
+				</div> */}
+
+				<div className="container Content">
 					<Switch>
 						<Route path="/" exact component={Inicio} />
 						<Route path="/Elegir" component={Elegir} />
@@ -54,9 +68,10 @@ function App() {
 						<Route path="/ReconoceFrase" component={ReconoceFrase} />
 						<Route exact path="/RepiteOracion" component={RepetirOracion} />
 
-						<Route exact path="/categoria" component={Categoria} />
+						<Route exact path="/Categoria" component={Categoria} />
 
-						<Route exact path="/Prueba" component={Pruebaa} />
+						<Route exact path="/Lista" component={Lista} />
+						<Route exact path="/categoria/:subcategoria/:subsubcategoria" component={Subcategoria} />
 					</Switch>
 				</div>
 

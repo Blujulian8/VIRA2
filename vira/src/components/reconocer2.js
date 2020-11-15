@@ -84,8 +84,8 @@ export default function Recon2() {
 
                 <div class="col-md-6">
                     <div class="card Jumbo1 w-md-50 Borde Sombra">
-                        <div class="card-body">
-                            <img class="imagenRec2 Borde align-center" src={pregunta.imagen} />
+                        <div class="card-body text-center">
+                            <img class="imagenRec2 Borde" src={pregunta.imagen} />
                         </div>
                     </div>
                 </div>

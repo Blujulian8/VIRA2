@@ -8,7 +8,7 @@ export default class Navbar extends Component {
 
             <nav className="navbar navbar-expand-lg sticky-top navbar-dark navbar-toggleable-sm Barra Sombra">
 
-                <Link className="ml-lg-5" to="/">
+                <Link className="navbar-brand ml-lg-5" to="/">
                     <img src={LOGO} alt="Menu Vira" height="50" className="align-top" />
                 </Link>
 

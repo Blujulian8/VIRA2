@@ -23,7 +23,7 @@ function TextToSpeech(props) {
         }
       })
     }
-
+    console.log(voice)
     speak({ text: value, voice: actual });
   }
 
@@ -32,7 +32,7 @@ function TextToSpeech(props) {
 
       <div>
 
-        <a className="btn Boton Boton3sin" onClick={() => read()} role="button" >
+        <a className="btn Boton Boton3sin p-2 m-3 ml-md-auto mr-md-4" onClick={() => read()} role="button" >
           <img src={VOLUME} className="IconoSM my-auto" alt="Escuchar" />
         </a>
       </div>

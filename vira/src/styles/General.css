@@ -11,17 +11,12 @@ body {
   height: 100% !important;
 }
 
-/* footer {
-    position: absolute;
-    bottom:0;
-} */
-
 .Fond0 {
   background-color: #f4f4fa;
 }
 
 .Content {
-  min-height: calc(100vh - 12.75rem);
+  min-height: calc(100vh - 11.25rem);
 }
 
 .container {

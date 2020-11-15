@@ -5,10 +5,13 @@ import LOGO from "../icons/LOGO.svg"
 export default class Navbar2 extends Component {
     render() {
         return (
-            <nav className="navbar navbar-dark Barra Sombra mt-5 mx-auto ">
-                <Link className=" ml-lg-5" to="/">
+            <nav className="navbar navbar-dark Barra Sombra mt-4 mx-auto ">
+                {/* <Link className="navbar-brand ml-lg-5" to="/">
                     <img src={LOGO} alt="Menu Vira" height="50" class="align-top" />
-                </Link>
+                </Link> */}
+                <span className="navbar-text text1 mx-auto blancoo">
+                    VIRA 2020 - En realidad no tenemos derechos registrados xd
+                </span>
             </nav>
         )
     }
