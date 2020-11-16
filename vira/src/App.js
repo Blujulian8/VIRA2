@@ -39,11 +39,11 @@ import ATRAS from './icons/back.svg'
 
 function App() {
 
-	//REPETIR (.THEN , .TOLOWERCASE, EXPORTAR RESULTADO) - RETROCEDER - FOOTER CAMBIAR CONTENIDO
-	//SE BORRARIN LAS FOTOS DE LAS CATEGORIAS DE BEBIDAS
-	function goBack() {
-		window.history.go(-1);
-	}
+	//REPETIR (EXPORTAR RESULTADO - QUE SE ESCUCHE) - RETROCEDER
+	// function goBack() {
+	// 	var historyObj = window.history;
+	// 	// window.history.back();
+	// }
 
 	return (
 		<Router>
@@ -57,6 +57,11 @@ function App() {
 				</div> */}
 
 				<div className="container Content">
+
+					{/* <button onClick={window.history.back()}>
+						click me!!
+					</button> */}
+
 					<Switch>
 						<Route path="/" exact component={Inicio} />
 						<Route path="/Elegir" component={Elegir} />

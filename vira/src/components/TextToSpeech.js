@@ -25,7 +25,7 @@ function TextToSpeech(props) {
     }
 
     var esLaQueVa = actual ? actual : voices[0]
-    console.log(esLaQueVa)
+    console.log(value)
     speak({ text: value, voice: esLaQueVa });
 
     // var msg = new SpeechSynthesisUtterance();

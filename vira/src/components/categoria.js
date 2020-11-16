@@ -16,7 +16,6 @@ export default function Categoria(props) {
                 querySnapshot.forEach((doc) => {
                     const data = doc.data();
                     datitos.push(data);
-                    // console.log(`${doc.id} => ${doc.data()}`);
                 });
                 setDatos(datitos)
             })
@@ -53,6 +52,7 @@ export default function Categoria(props) {
                 </div >
 
                 :
+
                 <div className="row row-cols-1 row-cols-md-3 text-center mt-3 mt-md-4">
                     {datos && datos.map((elemento, i) => (
 

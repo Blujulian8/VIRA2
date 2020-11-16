@@ -4,17 +4,21 @@ import { db } from "../index";
 import VOLUME from "../icons/volume_up.svg";
 import ARROW from "../icons/arrow_right.svg";
 
-import Listener, { SpeechRecogniser, Coincide } from '../components/SpeechRecogniser';
+import Listener, { Coincide } from '../components/SpeechRecogniser';
 import Reader from '../components/TextToSpeech';
 
 
 
 export default function Repetir() {
+    //TE TIRA UNA RONDA ATRASADA (SOLO PASA SI LO HAGO DESDE OTRA FUNCION)
+    //SE ESCUCHA LA PALABRA DEFAULT
+    //NO SE MUESTRA EL CORRECTO O INCORRECTO
+
     // "Abri la heladera en patas y me dio corriente"
 
     const [lista, setLista] = React.useState();
     const [pregunta, setPregunta] = React.useState({ opciones: [], correcta: 0, });
-    const [oracion, setOracion] = React.useState("Abri la heladera en patas y me dio corriente");
+    const [oracion, setOracion] = React.useState("");
     const [bien, setBien] = React.useState(0)
 
     const NuevaPregunta = (lista) => {
@@ -47,6 +51,10 @@ export default function Repetir() {
             })
 
     }, []);
+
+    React.useEffect(() => {
+
+    }, [])
 
     // function Check(opcion) {
     //     if (pregunta.correcta === opcion) {
@@ -81,13 +89,13 @@ export default function Repetir() {
 
             <div className="d-flex flex-wrap my-md-5 Borde Jumbo2 Sombra" >
 
-                <div className="h2 my-auto ml-md-4 p-3 p-md-0 text3">
+                <div className="h2  ml-md-4 p-3 my-4 text3">
                     {oracion}
                 </div>
 
-                <div className="p-0 ml-md-auto mr-md-4" >
+                {/* <div className="p-0 ml-md-auto mr-md-4" >
                     <Reader text={oracion} type="icono" />
-                </div>
+                </div> */}
 
             </div>
 
@@ -105,15 +113,7 @@ export default function Repetir() {
             </div>
 
 
-            {bien > 0 &&
-                <div>
-                    <div className="text-center">
-                        <a className="btn Boton2 Boton px-5 py-2 mt-5 Sombra" onClick={() => NuevaPregunta(lista)} role="button">
-                            <h3 className="my-auto text2">Siguiente Pregunta</h3>
-                        </a>
-                    </div>
-                </div>
-            }
+            <Coincide />
 
         </div>
     )
