@@ -5,6 +5,7 @@ import SpeechRecognition, {
 //import Readalong from "react-readalong-component";
 import VOICE from "../icons/keyboard_voice.svg";
 import STOP from "../icons/stop_rounded.svg";
+import SweetAlert from 'sweetalert'
 
 
 const SpeechRecogniser = (props) => {
@@ -30,7 +31,10 @@ const SpeechRecogniser = (props) => {
       // setCoincide(1)
       coincide = 2;
       Coincide(coincide)
-      alert("¡Correcto!")
+      SweetAlert({
+        icon: 'success',
+        title: 'Correcto!'
+      });
     }
     else {
 
@@ -38,7 +42,12 @@ const SpeechRecogniser = (props) => {
       coincide = 2
 
       Coincide(coincide, transcript)
-      alert('Incorrecto. Dijiste: "' + transcript + '"')
+      SweetAlert({
+        icon: 'error',
+        title: 'Incorrecto',
+        text: `Diijiste: "${transcript}" `
+      });
+
     }
     resetTranscript();
   };

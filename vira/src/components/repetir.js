@@ -83,7 +83,7 @@ export default function Repetir() {
         <div>
 
             <h2 className="my-3 my-md-4 text-center text2">
-                Repite la oracion de abajo, puedes escuchar como se pronuncia la oración
+                Repite la oracion de abajo.
             </h2>
 
 
