@@ -13,14 +13,14 @@ import "./styles/Icons.css";
 import "./styles/Fotos.css";
 
 import 'bootstrap/dist/css/bootstrap.css';
-import $ from 'jquery';
-import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
-import { db } from "./index";
+// import { db } from "./index";
 import Navbar from './components/Navbar';
 import Navbar2 from './components/Navbar2';
-import Atras from './components/atras'
+
+// import Atras from './components/atras'
+
 
 import Inicio from './screens/inicio';
 import Elegir from './screens/elegir';
@@ -35,7 +35,7 @@ import Lista from './components/prueba';
 import Categoria from './components/categoria';
 import Subcategoria from './components/subcategoria.js'
 
-import ATRAS from './icons/back.svg'
+
 
 function App() {
 
@@ -50,11 +50,7 @@ function App() {
 			<div className="Fond0">
 				<Navbar />
 
-				{/* <div className="mt-3" >
-					<a className="p-3 mx-5 btn Boton Boton3sin Jumbo6 Borde" role="button" onClick={goBack()}>
-						<img src={ATRAS} className="IconoXS my-auto" alt="Escuchar" />
-					</a>
-				</div> */}
+				{/* <Atras /> */}
 
 				<div className="container Content">
 

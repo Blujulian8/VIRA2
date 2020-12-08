@@ -1,17 +1,17 @@
-import React, { Component } from 'react'
-import { db } from "../index";
+import React from 'react'
+import { db } from "../index"
 
-import VOLUME from "../icons/volume_up.svg";
-import ARROW from "../icons/arrow_right.svg";
+// import VOLUME from "../icons/volume_up.svg" ACTIVAR CUANDO ARREGLES EL TTS
+import ARROW from "../icons/arrow_right.svg"
 
-import Listener, { Coincide } from '../components/SpeechRecogniser';
-import Reader from '../components/TextToSpeech';
+import Listener, { Coincide } from '../components/SpeechRecogniser'
+// import Reader from '../components/TextToSpeech' ACTIVAR CUANDO ARREGLES EL TTS
 
 
 
 export default function Repetir() {
-    //TE TIRA UNA RONDA ATRASADA (SOLO PASA SI LO HAGO DESDE OTRA FUNCION)
-    //SE ESCUCHA LA PALABRA DEFAULT
+
+    //SE ESCUCHA LA PALABRA DEFAULT (porque es undefined)
     //NO SE MUESTRA EL CORRECTO O INCORRECTO
 
     // "Abri la heladera en patas y me dio corriente"
@@ -24,9 +24,7 @@ export default function Repetir() {
     const NuevaPregunta = (lista) => {
         var largo = lista.length;
         var azar = Math.floor(Math.random() * largo);
-        // var posicion = pregunta.correcta;
         setPregunta(lista[azar]);
-        // setOracion(pregunta.opciones[posicion])
         setOracion(lista[azar].opciones[lista[azar].correcta])
         setBien(0)
     }
@@ -52,9 +50,9 @@ export default function Repetir() {
 
     }, []);
 
-    React.useEffect(() => {
-
-    }, [])
+    if (bien === "hola") {
+        console.log("ESTO ES PROVISORIO NO TE ASUSTES")
+    }
 
     // function Check(opcion) {
     //     if (pregunta.correcta === opcion) {
@@ -104,10 +102,10 @@ export default function Repetir() {
                 <Listener palabra={oracion} />
 
                 <div className="col-md-4 px-5">
-                    <a className="btn Boton Boton3sin btn-block Sombra py-2 my-3" onClick={() => NuevaPregunta(lista)} role="button">
+                    <button className="btn Boton Boton3sin btn-block Sombra py-2 my-3" onClick={() => NuevaPregunta(lista)}>
                         <img src={ARROW} className="IconoLG my-auto" alt="Siguiente oración" />
                         <h3 className="my-auto">Siguiente Oración</h3>
-                    </a>
+                    </button>
                 </div>
 
             </div>

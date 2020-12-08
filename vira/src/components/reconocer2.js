@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { db } from "../index";
 
 //QUE SE MANDEN LAS FOTOS (actualizar firebase)
@@ -30,7 +30,6 @@ export default function Recon2() {
                 querySnapshot.forEach((doc) => {
                     const data = doc.data();
                     datitos.push(data);
-                    // console.log(`${doc.id} => ${doc.data()}`);
                 });
                 return datitos;
             })
@@ -43,12 +42,12 @@ export default function Recon2() {
 
     }, []);
 
-    console.log(pregunta)
+    // console.log(pregunta)
 
     function Check(opcion) {
         if (pregunta.correcta === opcion) {
             setBien(1);
-            console.log("Funciona, Epico!!");
+            // console.log("Funciona, Epico!!");
             setTitulo("¡Correcto!");
         }
         else {
@@ -85,32 +84,32 @@ export default function Recon2() {
                 <div class="col-md-6">
                     <div class="card Jumbo1 w-md-50 Borde Sombra">
                         <div class="card-body text-center">
-                            <img class="imagenRec2 Borde" src={pregunta.imagen} />
+                            <img class="imagenRec2 Borde" src={pregunta.imagen} alt={pregunta.opciones[pregunta.correcta]} />
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="d-inline-flex flex-column ml-md-5">
-                        <a class={`btn Boton px-5 py-2 mt-3 mt-md-5 Sombra ${Respuesta(0)}`} role="button" onClick={() => Check(0)}>
+                        <button class={`btn Boton px-5 py-2 mt-3 mt-md-5 Sombra ${Respuesta(0)}`} onClick={() => Check(0)}>
                             <h3 class="my-auto text2">{pregunta.opciones[0]}</h3>
-                        </a>
+                        </button>
 
-                        <a class={`btn Boton px-5 py-2 mt-3 mt-md-5 Sombra ${Respuesta(1)}`} role="button" onClick={() => Check(1)}>
+                        <button class={`btn Boton px-5 py-2 mt-3 mt-md-5 Sombra ${Respuesta(1)}`} onClick={() => Check(1)}>
                             <h3 class="my-auto text2">{pregunta.opciones[1]}</h3>
-                        </a>
+                        </button>
 
-                        <a class={`btn Boton px-5 py-2 mt-3 mt-md-5 Sombra ${Respuesta(2)}`} role="button" onClick={() => Check(2)}>
+                        <button class={`btn Boton px-5 py-2 mt-3 mt-md-5 Sombra ${Respuesta(2)}`} onClick={() => Check(2)}>
                             <h3 class="my-auto text2">{pregunta.opciones[2]}</h3>
-                        </a>
+                        </button>
                     </div>
                 </div>
 
                 {bien > 0 &&
                     <div className="mx-auto">
-                        <a className="btn Boton111 Boton px-5 py-2 mt-5 Sombra" role="button" onClick={() => NuevaPregunta(lista)}>
+                        <button className="btn Boton111 Boton px-5 py-2 mt-5 Sombra" onClick={() => NuevaPregunta(lista)}>
                             <h3 className="my-auto text2">Siguiente Pregunta</h3>
-                        </a>
+                        </button>
                     </div>
                 }
 

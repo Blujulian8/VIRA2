@@ -1,11 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { db } from "../index";
 
-//QUE SE MANDEN LAS FOTOS (actualizar firebase)
 //INHABILITAR BOTONES??
-//APLUCARLO Y MODIFICAR PAAR EL DE REPETIR ORACION 
-
-//TODO LO DE LISTA DE ELEMENTOOOOOS
 
 export default function Recon() {
     const [bien, setBien] = React.useState(0)
@@ -30,7 +26,6 @@ export default function Recon() {
                 querySnapshot.forEach((doc) => {
                     const data = doc.data();
                     datitos.push(data);
-                    // console.log(`${doc.id} => ${doc.data()}`);
                 });
                 return datitos;
             })
@@ -43,12 +38,12 @@ export default function Recon() {
 
     }, []);
 
-    console.log(pregunta)
+    // console.log(pregunta)
 
     function Check(opcion) {
         if (pregunta.correcta === opcion) {
             setBien(1);
-            console.log("Funciona, Epico!!");
+            // console.log("Funciona, Epico!!");
             setTitulo("¡Correcto!");
         }
         else {
@@ -87,7 +82,7 @@ export default function Recon() {
 
                     <div className="card Jumbo5 Borde Sombra">
                         <div className="card-body text-center">
-                            <img className="imagenRec Borde" src={pregunta.imagen} />
+                            <img className="imagenRec Borde" src={pregunta.imagen} alt={pregunta.opciones[pregunta.correcta]} />
                         </div>
                     </div>
 
@@ -100,21 +95,21 @@ export default function Recon() {
                 <div className="col-lg-8 mx-auto" >
                     <div className="d-flex justify-content-center flex-wrap">
                         <div className="col-sm-4 text-center">
-                            <a className={`btn Boton px-5 py-2 mt-3 Sombra ${Respuesta(0)}`} role="button" onClick={() => Check(0)}>
+                            <button className={`btn Boton px-5 py-2 mt-3 Sombra ${Respuesta(0)}`} onClick={() => Check(0)}>
                                 <h3 className="my-auto text2">{pregunta.opciones[0]}</h3>
-                            </a>
+                            </button>
                         </div>
 
                         <div className="col-sm-4 text-center">
-                            <a className={`btn Boton px-5 py-2 mt-3 Sombra ${Respuesta(1)}`} role="button" onClick={() => Check(1)}>
+                            <button className={`btn Boton px-5 py-2 mt-3 Sombra ${Respuesta(1)}`} onClick={() => Check(1)}>
                                 <h3 className="my-auto text2">{pregunta.opciones[1]}</h3>
-                            </a>
+                            </button>
                         </div>
 
                         <div className="col-sm-4 text-center">
-                            <a className={`btn Boton px-5 py-2 mt-3 Sombra ${Respuesta(2)}`} role="button" onClick={() => Check(2)}>
+                            <button className={`btn Boton px-5 py-2 mt-3 Sombra ${Respuesta(2)}`} onClick={() => Check(2)}>
                                 <h3 className="my-auto text2">{pregunta.opciones[2]}</h3>
-                            </a>
+                            </button>
                         </div>
 
                     </div>
@@ -125,9 +120,9 @@ export default function Recon() {
             {bien > 0 &&
                 <div>
                     <div className="text-center">
-                        <a className="btn Boton2 Boton px-5 py-2 mt-5 Sombra" onClick={() => NuevaPregunta(lista)} role="button">
+                        <button className="btn Boton2 Boton px-5 py-2 mt-5 Sombra" onClick={() => NuevaPregunta(lista)} >
                             <h3 className="my-auto text2">Siguiente Pregunta</h3>
-                        </a>
+                        </button>
                     </div>
                 </div>
             }

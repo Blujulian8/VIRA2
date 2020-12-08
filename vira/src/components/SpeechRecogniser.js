@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
@@ -15,7 +15,7 @@ const SpeechRecogniser = (props) => {
 
   var oracion = props.palabra.toLowerCase()
 
-  console.log("a", oracion)
+  //console.log("a", oracion)
 
   const { transcript, resetTranscript } = useSpeechRecognition();
 
@@ -25,18 +25,20 @@ const SpeechRecogniser = (props) => {
 
   const parar = () => {
     SpeechRecognition.abortListening();
-    console.log("b", transcript.toLowerCase())
+    //console.log("b", transcript.toLowerCase())
+
     if (transcript.toLowerCase().indexOf(oracion) !== -1) {
 
       // setCoincide(1)
-      coincide = 2;
+      coincide = 1;
       Coincide(coincide)
       SweetAlert({
         icon: 'success',
         title: 'Correcto!'
       });
     }
-    else {
+
+    else if (transcript.length > 0) {
 
       // setCoincide(2);
       coincide = 2
@@ -49,25 +51,39 @@ const SpeechRecogniser = (props) => {
       });
 
     }
+
+    else {
+      // setCoincide(2);
+      coincide = 2
+
+      Coincide(coincide, transcript)
+      SweetAlert({
+        icon: 'error',
+        title: 'No dijiste nada rey',
+        text: `Clickea en "Hablar" y cuando termines de hablar clickea en "Detenerse"`
+      });
+    }
+
     resetTranscript();
   };
+
 
   return (
     <>
       {/* <p>{transcript}</p> */}
 
       <div className="col-md-4 px-5">
-        <a className="btn Boton Boton3sin btn-block Sombra py-2 my-3" role="button" onClick={empezar}>
+        <button className="btn Boton Boton3sin btn-block Sombra py-2 my-3" onClick={empezar}>
           <img src={VOICE} className="IconoLG my-auto" alt="Hablar" />
           <h3 className="my-auto">Hablar</h3>
-        </a>
+        </button>
       </div>
 
       <div className="col-md-4 px-5">
-        <a className="btn Boton Boton3sin btn-block Sombra py-2 my-3" role="button" onClick={parar}>
+        <button className="btn Boton Boton3sin btn-block Sombra py-2 my-3" onClick={parar}>
           <img src={STOP} className="IconoLG my-auto" alt="Detenerse" />
           <h3 className="my-auto">Detenerse</h3>
-        </a>
+        </button>
       </div>
 
     </>
@@ -77,7 +93,7 @@ const SpeechRecogniser = (props) => {
 
 
 function Coincide(coincide, transcript) {
-  var hola = 1
+  // var hola = 1
 
   // if (coincide === 1) {
   //   console.log("GIGANTE!");

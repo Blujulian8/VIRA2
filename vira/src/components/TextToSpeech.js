@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useDebugValue } from 'react';
+import React, { useState } from 'react';
 import { useSpeechSynthesis } from 'react-speech-kit';
 // import Dropdown from 'react-dropdown';
 
@@ -9,7 +9,7 @@ function TextToSpeech(props) {
   const { speak, voices } = useSpeechSynthesis();
 
   const [voice, setVoice] = useState(null);
-  const [value, setValue] = useState(props.text);
+  const [value] = useState(props.text); //aca habria un setValue 
 
   function read() {
 
@@ -17,7 +17,7 @@ function TextToSpeech(props) {
 
     if (actual == null) {
       voices.forEach((element) => {
-        if (element.lang.indexOf("es") != -1) {
+        if (element.lang.indexOf("es") !== -1) {
           actual = element;
           setVoice(element);
         }
@@ -46,9 +46,9 @@ function TextToSpeech(props) {
 
       <div>
 
-        <a className="btn Boton Boton3sin p-2 m-3 ml-md-auto mr-md-4" onClick={() => read()} role="button" >
+        <button className="btn Boton Boton3sin p-2 m-3 ml-md-auto mr-md-4" onClick={() => read()}>
           <img src={VOLUME} className="IconoSM my-auto" alt="Escuchar" />
-        </a>
+        </button>
       </div>
     );
   }
@@ -56,9 +56,9 @@ function TextToSpeech(props) {
   else {
     return (
       <div>
-        <a className="Tarjeta2" role="button" onClick={() => read()}>
+        <button className="Tarjeta2" onClick={() => read()}>
           <h4 className="my-auto text2">Reproducir sonido</h4>
-        </a>
+        </button>
       </div>
     )
   }

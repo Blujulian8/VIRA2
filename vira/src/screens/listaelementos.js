@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import Reader from '../components/TextToSpeech';
-import VOLUME from "../icons/volume_up.svg";
-
 
 export default class ListaElementos extends Component {
     render() {

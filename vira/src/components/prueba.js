@@ -24,12 +24,10 @@ export default function Lista() {
     }, []);
 
 
-    var categorias1 = ["Alimentos", "Bebidas", "Cuerpo", "Vestimenta"];
-    var subcategoriasal = ["Colaciones", "Guarniciones", "Principales", "Frutas", "Verduras", "Postres"];
-    var subcategorias2 = ["Calientes", "Frias"];
-
-    const [lista, setLista] = React.useState();
-    //var estado;
+    //BORRAR ESTOOOO
+    // var categorias1 = ["Alimentos", "Bebidas", "Cuerpo", "Vestimenta"];
+    // var subcategoriasal = ["Colaciones", "Guarniciones", "Principales", "Frutas", "Verduras", "Postres"];
+    // var subcategorias2 = ["Calientes", "Frias"];
 
     React.useEffect(() => {
         // ForE(Prueba);
@@ -49,7 +47,7 @@ export default function Lista() {
                                     <Link key={i} to={{ pathname: "/Categoria", state: { nombre: elemento.name } }} className="Tarjeta">
                                         <div className="card-header h4 Jumbo3 py-3 BordeV text3">{elemento.name}</div>
                                         <div className="card-body">
-                                            <img className="imagen imagenCat Borde" src={elemento.imagen} />
+                                            <img className="imagen imagenCat Borde" src={elemento.imagen} alt={elemento.imagen} />
                                         </div>
                                     </Link>
                                 </div>
