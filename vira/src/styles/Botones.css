@@ -54,3 +54,10 @@
   border-color: #b388eb !important;
   color: #f4f4fa !important;
 }
+
+.tts {
+  outline: none !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}

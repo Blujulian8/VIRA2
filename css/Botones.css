@@ -53,4 +53,12 @@
   background-color: #b388eb !important;
   border-color: #b388eb !important;
   color: #f4f4fa !important;
+  outline: none !important;
+  text-decoration: none !important;
+}
+
+.tts {
+  color: #f8b59b !important;
+
+  padding: none;
 }

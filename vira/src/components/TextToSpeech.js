@@ -56,7 +56,7 @@ function TextToSpeech(props) {
   else {
     return (
       <div>
-        <button className="Tarjeta2" onClick={() => read()}>
+        <button className="Boton3sin tts" onClick={() => read()}>
           <h4 className="my-auto text2">Reproducir sonido</h4>
         </button>
       </div>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
 import { db } from "../index";
 import Reader from '../components/TextToSpeech';
@@ -6,7 +6,6 @@ import Reader from '../components/TextToSpeech';
 export default function Categoria(props) {
     console.log(props.location.state)
     const [datos, setDatos] = React.useState(null)
-    const [datos2, setDatos2] = React.useState(null)
 
     React.useEffect(() => {
         let datitos = [];
@@ -40,7 +39,7 @@ export default function Categoria(props) {
 
                                     <div className="card-header h4 Jumbo3 py-3 BordeV text3">{elemento.name}</div>
                                     <div className="card-body">
-                                        <img className="imagen imagenCat Borde" src={elemento.imagen} />
+                                        <img className="imagen imagenCat Borde" src={elemento.imagen} alt={elemento.name} />
                                     </div>
                                 </Link>
                             </div>
@@ -60,7 +59,7 @@ export default function Categoria(props) {
                             <div className="card Jumbo5 mx-md-3 Borde2 h-100 Sombra negroo">
                                 <div className="card-header h4 Jumbo3 py-3 BordeV text3">{elemento.name}</div>
                                 <div className="card-body">
-                                    <img className="imagenEle rounded" src={elemento.imagen} />
+                                    <img className="imagenEle rounded" src={elemento.imagen} alt={elemento.name} />
                                 </div>
                                 <div className="card-footer BordeTV Jumbo6">
                                     <Reader text={elemento.name} />

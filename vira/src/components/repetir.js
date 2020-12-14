@@ -50,9 +50,11 @@ export default function Repetir() {
 
     }, []);
 
-    if (bien === "hola") {
+    // PROVISORIOOOOOOOOOOOOOOOOOOOO
+    if (bien === "hola" && pregunta === "miami") {
         console.log("ESTO ES PROVISORIO NO TE ASUSTES")
     }
+
 
     // function Check(opcion) {
     //     if (pregunta.correcta === opcion) {

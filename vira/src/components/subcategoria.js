@@ -33,7 +33,7 @@ export default function Subcategoria(props) {
                     <div className="card Jumbo5 mx-md-3 Borde2 h-100 Sombra negroo">
                         <div className="card-header h4 Jumbo3 py-3 BordeV text3">{elemento.name}</div>
                         <div className="card-body">
-                            <img className="imagenEle rounded" src={elemento.imagen} />
+                            <img className="imagenEle rounded" src={elemento.imagen} alt={elemento.name} />
                         </div>
                         <div className="card-footer BordeTV Jumbo6">
                             <Reader text={elemento.name} />
